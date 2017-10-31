@@ -1,7 +1,7 @@
 # nsip
 Disclaimer and overview of NSIP Repositories.
 
-Unless otherwise noted, all public repositories and files under the NSIP organisation organisation are subject to copyright under the Apache 2.0 license as summarised below. For a full description of the license [click this link](../LICENSE).
+Unless otherwise noted, all public repositories and files under the NSIP organisation organisation are subject to copyright under the Apache 2.0 license as summarised below. For a full description of the license [click this link](LICENSE).
 
 Copyright 2017 NSIP
 
