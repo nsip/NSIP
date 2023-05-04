@@ -1,0 +1,253 @@
+= nsip
+Disclaimer and overview of NSIP Repositories.
+
+Unless otherwise noted, all public repositories and files under the NSIP organisation organisation are subject to copyright under the Apache 2.0 license as summarised below. For a full description of the license link:LICENSE[click this link].
+
+Copyright 2023 NSIP
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+NSIP over its lifetime has generated a large number of both private and public repositories to host and publish its work. Much of this work related to specific projects undertaken over the years. In the following, we list all repositories NSIP has on github and their status, by subject matter.
+
+== Listing of current repositories
+
+=== National Education Data Dictionary
+
+Status:: current, production
+Description:: CMS system for collaborately authored data dictionary of recurring concepts and entities in Australian education. Includes user management and authentication.
+Private:: Because system architecture documented, credentials incorporated in stored config files.
+Implemented:: Qing Miao
+Maintained: Qing Miao
+Language:: Go
+
+* https://github.com/nsip/data-dic-cms (Private, CMS component)
+* https://github.com/nsip/data-dic-view (Private, data rendering)
+* https://github.com/nsip/data-dic-sign (Private, Authn & Authz)
+* https://github.com/nsip/data-dic-api (Private, backend API)
+* https://github.com/nsip/data-dic-doc (Private, Systems documentation)
+* https://github.com/nsip/data-dictionary-documentation (Public, user documentation)
+* https://github.com/nsip/data-dic (early draft)
+* https://github.com/nsip/data-dic-preproc (early draft)
+
+=== NIAS (NAPLAN Infrastructure As A Service)
+
+Status:: current, production
+Description:: Report extractor and validator for NAPLAN. Derived from generic NIAS 1/NIAS 3 (NSIP Infrastructure As A Service), q.v.
+Implemented:: Qing Miao, Matt Farmer, Nick Nicholas
+Maintained: Nick Nicholas, Qing Miao (dev-nrt-splitter)
+Language:: Go
+
+* https://github.com/nsip/nias2 (Validator, main body of code)
+* https://github.com/nsip/dev-nrt (Report extractor)
+* https://github.com/nsip/dev-nrt-splitter (CSV splitter into smaller files, per school, domain, year level)
+* https://github.com/nsip/dev-nrt-ingest (early draft)
+* https://github.com/nsip/naprr-ingest (early draft)
+
+=== SIF specification management
+
+Status:: current, production
+Description:: Software to manage generation of the SIF specification for infrastructure and data, and source data for Australian specification. Ongoing work on reconciling workflows and structures with SIF Infrastructure, SIF NA (https://github.com/Access4LearningNA/specgen_input_na : North American spec source data), and SIF NZ (currently in abeyance)
+Private: Specgen sourcecode judged to be proprietary and under copyright
+Implemented:: Vince Paredes (specgen), Linda Marshal, Stuart McGrigor, Nick Nicholas
+Maintained: (John Lovell) (specgen) [development currently frozen]; Nick Nicholas
+Language:: C# (specgen), Specgen XML (source data), XSLT, Node (sifxml2pescjson_source)
+
+* https://github.com/nsip/specgen_input_au (Australian spec source data)
+* https://github.com/nsip/specgen_input_nz (New Zealand spec source data; currently frozen, no involvement from NSIP)
+* https://github.com/Access4Learning/specgen_input_common (Common assets shared between SIF locales: XSLT scripts)
+* https://github.com/Access4Learning/specgen_input_infra (Global Infrastructure spec source data)
+* https://github.com/nsip/DraftSIFInfrastructureSpec (early draft of specgen_input_infra)
+* https://github.com/nsip/specgen-sourcecode (specgen source code for generating online display of specification)
+* https://github.com/nsip/sifxml2pescjson (transform between SIF XML and SIF PESC JSON: schema-aware transformation scripts) 
+* https://github.com/nsip/sifxml2pescjson_source (generator of transformation scripts in `sifxml2pescjson`)
+* https://github.com/nsip/SIFConceptualModel (Conceptual model of SIF diagrams; now maintained instead on Sharepoint as PlantUML diagrams)
+
+=== Machine Readable Australian Curriculum
+
+Status:: current, production
+Description:: Software to translate Machine Readable Australian Curriculum (MRAC) from SOFIA JSON (the CMS managing it in ACARA) to ASN JSON and JSON-LD (the formats used to publish MRAC out of ESA; ASN JSON as standalone files, JSON-LD for translation of ASN JSON into ASN RDF and publication on Pool Party.)
+Implemented:: Qing Miao
+Maintained: Qing Miao
+Language:: Go
+
+* https://github.com/nsip/sofia-asn
+
+=== Safer Technologies for Schools (ST4S)
+
+Status:: current, production
+Description:: Scripts to process readiness check and associated evaluations received out of the Alchemer polling software. 
+Implemented:: Daniel Stuart
+Maintained: Daniel Stuart
+Language:: Lua
+
+* https://github.com/nsip/ST4S-Alchemer-Scripts
+* https://github.com/nsip/ST4S-Readiness-Check-Cloud (current? last updated Dec 2021)
+
+=== NAPLAN specifications
+
+Status:: current, production
+Description:: Documentation of NAPLAN registration and reporting data; data specifications; sample data generator; Platform API client (Insomnia). The registration-data-set schemas are consumed by NIAS as registration data validator.
+Implemented:: Nick Nicholas
+Maintained: Nick Nicholas
+Language:: Perl, Ruby, Javascript
+
+* https://github.com/nsip/naplan-results-reporting
+* https://github.com/nsip/registration-data-set
+* https://github.com/nsip/nias_writing_extract_test (historical 2018, used to validate writing extract generation)
+
+=== Hub Integration Testing Service (HITS)
+
+Status:: frozen, production
+Description:: Testbed for vendors to familiarise with SIF REST queries, and to demonstrate competence in SIF to NSIP. Intended to be reimplemented using commodity components in 2023.
+Private:: Credentials incorporated in stored config files.
+Implemented:: Scott Penrose, Nick Nicholas, Daniel Stuart
+Maintained:: Nick Nicholas (sifxml2go)
+Language:: Javascript, Perl, Java, Javascript, Go, Markdown
+
+
+
+* https://github.com/nsip/hits-dashboard
+* https://github.com/nsip/sif-hits (Instance of SIF Framework specific to HITS) 
+* https://github.com/nsip/sifxml2go (Generates sets of test objects for fixed scenarios in Go, and outputs them as XML.)
+* https://github.com/nsip/sifdata-go (aborted draft of foregoing)
+* https://github.com/nsip/sifxmlnaplan2csharp (Draft of the foregoing, using C# objects instead of Go objects.)
+* https://github.com/nsip/sif-data (Perl code to generate test objects in database, superseded by sifxml2go)
+* https://github.com/nsip/usecases (HITS data exchange scenarios documentation)
+* https://github.com/nsip/HITS-Reports (Obsolete code to run soundness evaluation on database contents)
+* https://github.com/nsip/HITS-Client
+* https://github.com/nsip/thehub (Past attempt at documentation of Everything in NSIP)
+* https://github.com/nsip/HITS-Automated-Tests
+* https://github.com/nsip/nsip-theme
+* https://github.com/nsip/thehits
+* https://github.com/nsip/NSIP-Internal (generic ticketing for NSIP development)
+* https://github.com/nsip/usecase-ui
+* https://github.com/nsip/HITS-DevDash
+
+=== SIF standard SDKs
+
+
+Status:: frozen, production
+Description:: SDK for external systems to integrate with SIF specification, including API and backend for object storage.
+Private:: Credentials incorporated in stored config files. Funding currently frozen, only being updated for updates to data model.
+Implemented:: Joerg Huber (Java), Raf Rafizdal (.NET)
+Maintained:: Joerg Huber (Java), Raf Rafizdal (.NET)
+Language::  Java, .NET, Go
+
+* https://github.com/nsip/sif3-framework-dotnet
+* https://github.com/Access4Learning/sif3-framework-java (obsolete: https://github.com/nsip/sif3-framework-java)
+* https://github.com/nsip/sif3-training-java
+* https://github.com/nsip/sifclient-go (client for SIF, in Go)
+* https://github.com/nsip/SifBootCamp-dotNet
+
+== Listing of historical repositories
+
+I am not listing in the following repositories that have been archived.
+
+=== SIF JSON Converter
+
+Status:: historical, 2021
+Description:: Microservice for translating between SIF XML and SIF JSON. Not taken up due to lack of capability in engaging with binaries. (Stated preference of potential client was for software library instead.) Functionality has since been rolled in to SIF Framework, which has reduced usefulness further.
+Implemented::  Qing Miao
+Language:: Go
+
+* https://github.com/nsip/sif-xml2json
+* https://github.com/nsip/sif-json2xml
+* https://github.com/nsip/sif-spec-res
+* https://github.com/nsip/goes2pesc (Abortive attempt at same for PESC and Goessner JSON)
+
+=== Open Technology Framework for Online Formative Assessment (OTF)
+
+Status:: historical, 2020
+Description:: Proof of concept software exploring integration of formative assessment into ongoing dynamic testing of student against formative assessment and learning progressions
+Implemented:: Matt Farmer, Qing Miao; Leslie Hill (lp-to-JSON)
+Language:: Go
+
+* https://github.com/nsip/otf-align
+* https://github.com/nsip/otf-classifier
+* https://github.com/nsip/otf-hub
+* https://github.com/nsip/otf-config
+* https://github.com/nsip/otf-weighting
+* https://github.com/nsip/otf-level
+* https://github.com/nsip/otf-reader
+* https://github.com/nsip/otf-util
+* https://github.com/nsip/otf-testdata
+* https://github.com/nsip/theotf
+* https://github.com/nsip/lp-to-JSON
+* https://github.com/nsip/Workflow
+* https://github.com/nsip/benthos-plugin-nias
+
+=== Machine Readable Syllabus
+
+Status:: historical, 2019, 2021
+Description:: Code to transform API specification of NSW Syllabus into machine readable form consistent with MRAC, and to visualise it.
+Implemented:: Matt Farmer, Qing Miao, Nick Nicholas; Swee Hing Lee (mrlf-syllabus-parser); Leslie Hill (MRLF)
+Language:: Go, Python, .NET
+
+* https://github.com/nsip/mrlf-syllabus-viewer
+* https://github.com/nsip/mrlf-syllabus-parser
+* https://github.com/nsip/MRLF
+
+=== NIAS (NSIP Infrastructure as a service)
+
+Status:: historical, 2019
+Description:: Distributed computing toolkit for storage of school data as tuples and peer-to-peer data-safe sharing of school data. Known as NIAS 3, to differentiate from NIAS 2 (NAPLAN application) and NIAS 1 (prototype in Ruby).
+Implemented:: Matt Farmer, Qing Miao, Nick Nicholas, Scott Penrose
+Language:: Go
+
+* https://github.com/nsip/n3-gql
+* https://github.com/nsip/n3-crdt
+* https://github.com/nsip/n3
+* https://github.com/nsip/n3-csv2json
+* https://github.com/nsip/n3-deep6
+* https://github.com/nsip/n3-web
+* https://github.com/nsip/n3-context
+* https://github.com/nsip/n3-sif2json
+* https://github.com/nsip/n3-privacy
+* https://github.com/nsip/liftbridge-binary
+* https://github.com/nsip/nias (Ruby initial version: 2016, "NIAS 1")
+
+=== Digital Classroom
+
+Status:: historical, 2018
+Description:: Proof of concept of integration of diverse available data sources to profile student learning.
+Implemented:: Matt Farmer, Qing Miao, Nick Nicholas, Angie Yang, Scott Penrose
+Language:: Go
+
+* https://github.com/nsip/DC-UI
+* https://github.com/nsip/dc-dynamic
+* https://github.com/nsip/dc-multimodel
+* https://github.com/nsip/dc-curriculum-service
+
+=== SIF NAPLAN Adapter
+
+Status:: historical, 2018
+Description:: SIF3 Provider acting as a basic proxy to the Naplan API.
+Implemented:: Ben Carter
+Language:: Java
+
+* https://github.com/nsip/sif3-naplan-adapter
+
+=== Validation of Australian Government collections
+
+Status:: historical, 2018
+Description:: Software to validate Australian Government data collections (Financial Questionnaire), patterned after NIAS.
+Implemented:: Nick Nicholas
+Language:: Go
+
+* https://github.com/nsip/nias2ag
+
+=== General documentation
+
+* https://github.com/nsip/Template (Attempt at generic repository template)
+* https://github.com/nsip/admin-docker (Docker for documentation server)
+* https://github.com/nsip/admin-aws (Admin files for Amazon Web Services)
